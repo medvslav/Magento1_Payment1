@@ -13,5 +13,5 @@ The form has following fields:<br />
 <br />
 After installing this module you have to activate this payment method in the configuration.<br />
 <br />
-The module uses not a real Payment Gateway for imitation.<br />
+The module uses not a real Payment Gateway for the imitation payment process  (the user won't get charged).<br />
 
