@@ -15,7 +15,7 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
- * Article model
+ * Medvslav_Paym1 model
  *
  * @category    Medvslav
  * @package     Medvslav_Paym1
