@@ -1,0 +1,37 @@
+<?php
+/**
+ * Medvslav_Paym1 extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Medvslav
+ * @package        Medvslav_Paym1
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * The Payment Gateway form for submitting the order data to the Gateway
+ * @category    Medvslav
+ * @package     Medvslav_Paym1
+ * @author      Medvslav
+ */
+?>
+<?php
+$order = new Mage_Sales_Model_Order();
+$orderId = Mage::getSingleton('checkout/session')->getLastRealOrderId();
+$order->loadByIncrementId($orderId);
+?>
+<h2><?php echo $this->__('My Payment Gateway') ?></h2>
+<p>It's not a real payment gateway (you won't get charged)</p>
+<!-- Here will be the form of Payment Gateway. We have to fill the hidden form fields with order data -->
+<form name="mypaymentmethod" method="post" action="<?php echo Mage::helper('medvslav_paym1')->getPaymentGatewayUrl(); ?>">
+  <input type="hidden" name="orderId" value="<?php echo $orderId; ?>">
+  <!-- This form can be submitted automatically to the Gateway -->
+  <input type="submit" value="<?php echo $this->__('Make Payment') ?>" />
+</form>
+

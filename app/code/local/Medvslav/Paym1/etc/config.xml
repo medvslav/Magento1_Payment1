@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Medvslav_Paym1 extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Medvslav
+ * @package        Medvslav_Paym1
+ * @copyright      Copyright (c) 2016
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <modules>
+        <Medvslav_Paym1>
+            <version>1.0.0</version>
+        </Medvslav_Paym1>
+    </modules>
+    <global>  
+        <helpers>
+            <medvslav_paym1>
+                <class>Medvslav_Paym1_Helper</class>
+            </medvslav_paym1>
+        </helpers> 
+        <blocks>
+            <medvslav_paym1>
+                <class>Medvslav_Paym1_Block</class>
+            </medvslav_paym1>
+        </blocks>         
+        <models>
+            <medvslav_paym1>
+                <class>Medvslav_Paym1_Model</class>
+            </medvslav_paym1>
+        </models>
+    </global> 
+    <default>
+        <payment>
+            <medvslav_paym1>
+                <active>1</active>
+                <model>medvslav_paym1/paymentmethod</model>
+                <order_status>pending</order_status>
+                <title>Medvslav PaymentMethod1</title>
+                <allowspecific>0</allowspecific>
+                <payment_action>sale</payment_action>
+            </medvslav_paym1>
+        </payment>
+    </default>   
+    <frontend>
+        <routers>
+            <medvslav_paym1>
+                <use>standard</use>
+                <args>
+                    <module>Medvslav_Paym1</module>
+                    <frontName>mypaymentmethod1</frontName>
+                </args>
+            </medvslav_paym1>
+        </routers>
+    </frontend>
+</config>
